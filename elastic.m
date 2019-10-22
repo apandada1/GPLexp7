@@ -1,10 +1,11 @@
+%To do - move legend to southeast
 function elastic(fname1, fname2, diameter_in_mm, length_in_cm, name_of_graph, no_of_points_to_fit)
 	M = dlmread(fname1); %name of text file containing force
 	N = dlmread(fname2); %name of text file containing angle
-	force = -M(3:length(M), 2);
-	angle_of_rotation = -N(3:length(N), 2) * pi/180; %conversion to radian
+	force = -M(3:length(M), 2)
+	angle_of_rotation = -N(3:length(N), 2) * pi/180 %conversion to radian
 	area_of_wire = pi * (diameter_in_mm/4000)^2;
-	r_in_cm = 0.25; %needs to be updated
+	r_in_cm = 2.4; %needs to be updated
 	stress = force/area_of_wire;
 	strain = r_in_cm * angle_of_rotation/length_in_cm;
 
