@@ -1,6 +1,7 @@
 %To do - move legend to southeast
 function elastic(fname1, fname2, diameter_in_mm, length_in_cm, name_of_graph, no_of_points_to_fit)
-	% eg "elastic('thin_wire_angle.txt','thin_wire_force.txt',0.25,82.3,'Thin Wire',8)"
+	%elastic('thin_wire_force.txt','thin_wire_angle.txt',0.25,82.3,'Thin Wire',8)
+
 	M = dlmread(fname1); %name of text file containing force
 	N = dlmread(fname2); %name of text file containing angle
 	force = -M(3:length(M), 2)
